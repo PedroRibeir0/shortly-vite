@@ -1,0 +1,61 @@
+$gray: #bfbfbf;
+$grayish-violet: #9e9aa7;
+$very-dark-blue: #35323e;
+$very-dark-violet: #232127;
+$cyan: #2acfcf;
+$dark-violet: #3b3054;
+$red: #f46262;
+$bg-1: white;
+$bg-2: #EFF1F7;
+
+@import 'header', 'info', 'short_links', 'links', 'statistics', 'footer';
+
+
+
+
+.app{
+    max-width: 1280px;
+    margin: 0 auto;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.082);
+}
+
+.bg-1,  .bg-2{
+    padding: 20px;
+    width: 100%;
+}
+
+.bg-1{
+    background-color: $bg-1;
+    @media screen and (min-width: 1024px) {
+        padding-left: 100px;
+        padding-right: 0;
+    }
+    
+}
+
+.bg-2{
+    background-color: $bg-2;
+    padding-bottom: 0;
+    @media screen and (min-width: 1024px) {
+        padding-top: 0;
+    }
+}
+
+.get-started-button{
+    background-color: $cyan;
+    border: none;
+    padding: 10px 32px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 700;
+    font-size: 17px;
+    cursor: pointer;
+
+    &:active{
+        transform: scale(0.96);
+    }
+
+    &:hover{
+        background-color: lighten($color: $cyan, $amount: 12);
+    }
+}

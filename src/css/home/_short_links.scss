@@ -1,0 +1,98 @@
+.short-links{
+    background-color: $dark-violet;
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 10px;
+    @media screen and (min-width: 768px) {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 30px;
+    }
+    @media screen and (min-width: 1024px){
+        flex-direction: row;
+        align-items: end;
+        position: relative;
+        bottom: 60px;
+        gap: 20px;
+        padding: 40px;
+        margin-bottom: 0px;
+    }
+
+    .link-input{
+        width: 100%;
+        height: 50px;
+        padding: 0 15px;
+        border-radius: 7px;
+        border: none;
+        outline: none;
+        line-height: 30px; 
+        color: darken($color: $grayish-violet, $amount: 10); 
+        @media screen and (min-width: 1024px){
+            flex-basis: 75%;
+        }
+          
+
+        &::placeholder{
+
+            font-weight: 500;
+            font-size: 16px;
+            color: $grayish-violet;
+        }
+    }
+
+    .warning{
+        display: none;
+        @media screen and (min-width: 1024px){
+            position: absolute;
+            left: 40px;
+            top: 94px;
+        }
+    
+    }
+
+    input:invalid:focus{
+        outline: 2px solid $red;
+    }
+    input:invalid:focus + .warning{
+        display: inline;
+        color: $red;
+        align-self: flex-start;
+        font-style: italic;
+        font-size: 15px;
+    }
+
+    .shorten-it-button{
+        margin-top: 10px;
+        background-color: $cyan;
+        border: none;
+        color: white;
+        font-weight: 700;
+        font-size: 17px;
+        width: 100%;
+        height: 50px;
+        border-radius: 7px;
+        @media screen and (min-width: 1024px){
+            flex-basis: 25%;
+            margin-top: 0;
+        }
+    
+
+        &:active{
+            transform: scale(0.98);
+        }
+
+        &:hover{
+            background-color: lighten($color: $cyan, $amount: 12);
+        }
+    }
+}

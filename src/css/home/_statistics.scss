@@ -1,0 +1,93 @@
+.statistics{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    
+
+    h2,h3{
+        color: $very-dark-violet;
+    }
+
+    p{
+        color: $grayish-violet;
+        font-size: 16px;
+        font-weight: 500;
+        @media screen and (min-width: 768px) {
+            width: 70%;
+        }
+        @media screen and (min-width: 1024px) {
+            width: 50%;
+        }
+        
+    }
+
+    .benefits-list{
+        list-style: none;
+        margin-top: 60px;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 70px;
+        @media screen and (min-width: 1024px) {
+         margin-bottom: 80px;   
+        }
+
+        .benefits{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: $bg-1;
+            padding: 20px;
+            padding-bottom: 30px;
+            border-radius: 5px;
+            position: relative;
+            @media screen and (min-width: 768px) {
+                width: 70%;
+                padding-bottom: 40px;
+            }
+
+            &::after{
+                position: absolute;
+                bottom: -70px;
+                content: '';
+                height: 70px;
+                width: 7px;
+                background-color: $cyan;
+            }
+
+            &:last-child::after{
+                display: none;
+            }
+
+            .b-img-container{
+                position: relative;
+                top: -55px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $dark-violet;
+                padding: 10px;
+                width: 75px;
+                height: 75px;
+                border-radius: 50%;
+
+                .b-img{
+                    width: 75%;
+                }
+            }
+
+            .b-h{
+                margin-top: -25px;
+                margin-bottom: 15px;
+                font-size: 19px;
+            }
+        }
+    }
+}
