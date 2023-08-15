@@ -537,7 +537,7 @@ footer {
   footer {
     flex-direction: row;
     align-items: start;
-    justify-content: space-between;
+    justify-content: center;
     gap: 50px;
     padding: 50px 100px;
   }
