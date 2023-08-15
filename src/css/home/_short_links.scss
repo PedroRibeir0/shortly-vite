@@ -1,4 +1,5 @@
 .short-links{
+    max-width: 868px;
     background-color: $dark-violet;
     background-repeat: no-repeat;
     background-position: 100% 0;
@@ -12,12 +13,14 @@
     align-items: center;
     gap: 5px;
     border-radius: 10px;
+
     @media screen and (min-width: 768px) {
         width: 70%;
         margin-left: auto;
         margin-right: auto;
         padding: 30px;
     }
+
     @media screen and (min-width: 1024px){
         flex-direction: row;
         align-items: end;
@@ -85,7 +88,6 @@
             flex-basis: 25%;
             margin-top: 0;
         }
-    
 
         &:active{
             transform: scale(0.98);

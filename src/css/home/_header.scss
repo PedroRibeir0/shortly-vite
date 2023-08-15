@@ -1,25 +1,35 @@
 header{
     left: 0;
     top: 0;
-    width: 100vw;
+    width: 100%;
     position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 20px;
     background-color: white;
     z-index: 1000;
-    
-    @media screen and (min-width: 768px) {
-        padding: 30px;
-    }
-    @media screen and (min-width: 1024px) {
-        padding: 30px 100px;
-        max-width: 1280px;
-        left: 50%;
-        transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    transition: box-shadow .2s;
+
+    &.shadow{
+        box-shadow: 0 5px 15px 3px rgba(0, 0, 0, 0.123);
     }
 
+    @media screen and (min-width: 768px) {
+        padding: 40px;
+    }
+    @media screen and (min-width: 1024px) {
+        padding: 35px;
+    }
+    
+    .content{
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1440px;
+    }
+    
 
     .logo{
         user-select: none;
@@ -32,6 +42,10 @@ header{
         cursor: pointer;
         @media screen and (min-width: 768px) {
             font-size: 30px;
+        }
+
+        @media screen and (min-width: 1024px){
+            display: none;
         }
 
         &:active{
@@ -56,15 +70,20 @@ header{
         list-style: none;
         font-weight: 700;
         font-size: 18px;
+
         @media screen and (min-width: 768px) {
             top: 110px;
             width: 65%;
         }
         @media screen and (min-width: 1024px) {
-            width: 20%;
+            background-color: transparent;
+            color: $very-dark-violet;
+            position: static;
+            flex-direction: row;
+            width: max-content;
             transform: none;
-            left: 79%;
-
+            align-items: center;
+            padding: 0;
         }
 
 
@@ -78,11 +97,22 @@ header{
         .menu-opt:nth-child(4){
             padding-top: 25px;
             border-top: 1px solid rgba(201, 201, 201, 0.5);
+
+            @media screen and (min-width: 1024px){
+                padding-top: 0;
+                border: none;
+                margin-left: 50px;
+            }
         }
         .menu-opt:nth-child(5){
+            color: white;
             background-color: $cyan;
             padding: 12px;
             border-radius: 50px;
+
+            @media screen and (min-width: 1024px){
+                padding: 8px 17px;
+            }
             
             &:active{
                 transform: scale(0.96);
@@ -90,7 +120,6 @@ header{
 
             &:hover{
                 background-color: lighten($color: $cyan, $amount: 12);
-                color: white;
             }
         }
     }

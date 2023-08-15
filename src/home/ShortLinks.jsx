@@ -1,5 +1,5 @@
 
-export default function ShortLinks(props) {
+export default function ShortLinks({short, setLinkInput, linkInput}) {
 
   const style = {
     backgroundImage : 'url("/images/bg-shorten-mobile.svg")'
@@ -7,9 +7,20 @@ export default function ShortLinks(props) {
 
   return (
     <div className="short-links" style={style}>
-      <input required className="link-input" type="text" placeholder="Shorten a link here..."/>
+      <input 
+      required 
+      className="link-input" 
+      type="text" 
+      placeholder="Shorten a link here..."
+      value={linkInput}
+      onChange={e=>setLinkInput(e.target.value)}
+      />
       <span className="warning">Please add a link</span>
-      <button onClick={props.short} className="shorten-it-button">Shorten It!</button>
+      <button 
+      onClick={short} 
+      className="shorten-it-button">
+        Shorten It!
+      </button>
     </div>
   )
 }

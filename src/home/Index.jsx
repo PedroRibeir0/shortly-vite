@@ -12,12 +12,12 @@ import { useState } from 'react'
 export default function Index() {
 
   const [links, setLinks] = useState([])
+  const [linkInput, setLinkInput] = useState('')
   
-  const endPoint = 'https://api-ssl.bitly.com/v4/shorten'; 
-  const token = 'c7c7e7d44c1a28ad7596ead52fa89fcd02c585c5'; 
+  const endPoint = 'https://api-ssl.bitly.com/v4/shorten' 
+  const token = 'c7c7e7d44c1a28ad7596ead52fa89fcd02c585c5'
   
   async function apiRequest(){
-    const linkInput = document.querySelectorAll('.link-input')[0].value
 
     if(!linkInput.includes('https://')){
       window.alert('Invalid URL')
@@ -29,7 +29,6 @@ export default function Index() {
       domain: 'bit.ly',
     };
     
-
     const response = await fetch(endPoint, {
       method: 'POST',
       headers: {
@@ -38,12 +37,13 @@ export default function Index() {
       },
       body: JSON.stringify(body)
     })
+
     const data = await response.json()
-    console.log(data)
     if (!data.link) {
       window.alert('error when shortening link')
       return
     }
+
     const newLink = {
       url: linkInput,
       shortUrl: data.link
@@ -59,6 +59,8 @@ export default function Index() {
       </section>
       <section className='bg-2'>
         <ShortLinks
+          linkInput={linkInput}
+          setLinkInput={setLinkInput}
           short={apiRequest}/>
         <ul className='links'>
           {links.map(item=>{
